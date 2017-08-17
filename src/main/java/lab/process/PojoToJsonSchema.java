@@ -9,8 +9,9 @@ import java.io.Writer;
 
 public class PojoToJsonSchema {
 
+    private static final ObjectMapper mapper = new ObjectMapper();
+
     public static void process(Class pojoClass, Writer writer) throws IOException {
-        ObjectMapper mapper = new ObjectMapper();
         JsonSchemaGenerator schemaGen = new JsonSchemaGenerator(mapper);
         JsonSchema schema= schemaGen.generateSchema(pojoClass);
         mapper.writeValue(writer,schema);

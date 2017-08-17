@@ -8,8 +8,9 @@ import java.io.Writer;
 
 public class PojoToJson {
 
+    private static final ObjectMapper mapper = new ObjectMapper();
+
     public static void process(Object instance, Writer writer) throws IOException {
-        ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(writer,instance);
     }
 }

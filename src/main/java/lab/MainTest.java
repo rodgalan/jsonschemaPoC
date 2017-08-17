@@ -16,9 +16,9 @@ public class MainTest {
     public static void main(String[] args) throws IOException {
 
         //Execute Pojo2JsonSchema
-        File filePojo2JosnSchema = new File("src/main/resources/filePojo2JosnSchema_test.jsonschema.json");
-        Writer writerPojo2JosnSchema = new FileWriter(filePojo2JosnSchema);
-        PojoToJsonSchema.process(ClickEvent.class,writerPojo2JosnSchema);
+        File filePojo2JsonSchema = new File("src/main/resources/filePojo2JsonSchema_test.jsonschema.json");
+        Writer writerPojo2JsonSchema = new FileWriter(filePojo2JsonSchema);
+        PojoToJsonSchema.process(ClickEvent.class,writerPojo2JsonSchema);
 
         //Execute Pojo2Json
         ClickEvent click = new ClickEvent();
@@ -29,8 +29,9 @@ public class MainTest {
         click.setEventType(WebhookEventType.Click); //No hauria de cladre aixo
 
         File filePojo2Json = new File("src/main/resources/Pojo2Json_test.json");
-        Writer wtiterPojo2Json = new FileWriter(filePojo2Json);
-        PojoToJson.process(click,wtiterPojo2Json);
+        Writer writerPojo2Json = new FileWriter(filePojo2Json);
+        PojoToJson.process(click,writerPojo2Json);
+
 
 
 
