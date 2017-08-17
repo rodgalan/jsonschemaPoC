@@ -10,10 +10,13 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
     compile("com.fasterxml.jackson.module:jackson-module-jsonSchema:2.9.0")
     compile("com.fasterxml.jackson.core:jackson-annotations:2.9.0")
     compile("com.fasterxml.jackson.core:jackson-core:2.9.0")
     compile("com.fasterxml.jackson.core:jackson-databind:2.9.0")
     compile("javax.validation:validation-api:1.1.0.Final")
+
+    compile("org.jsonschema2pojo:jsonschema2pojo-core:0.4.37")
+
+    testCompile("junit:junit:4.12")
 }
