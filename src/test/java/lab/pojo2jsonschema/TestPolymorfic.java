@@ -2,9 +2,9 @@ package lab.pojo2jsonschema;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lab.pojo2jsonschema.model.sendgrid.ClickEvent;
-import lab.pojo2jsonschema.model.sendgrid.WebhookEventType;
-import lab.pojo2jsonschema.model.sendgrid.expanded.SendgridEvent;
+import lab.model.sendgrid.ClickEvent;
+import lab.model.sendgrid.WebhookEventType;
+import lab.model.sendgrid.expanded.SendgridEvent;
 
 
 import java.io.IOException;

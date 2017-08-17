@@ -1,4 +1,4 @@
-package lab.pojo2jsonschema.infrastructure.serializers;
+package lab.serializers;
 
 
 import com.fasterxml.jackson.core.JsonParser;

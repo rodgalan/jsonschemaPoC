@@ -1,10 +1,10 @@
-package lab.pojo2jsonschema.model.sendgrid;
+package lab.model.sendgrid;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import lab.pojo2jsonschema.infrastructure.serializers.NumericBooleanDeserializer;
-import lab.pojo2jsonschema.infrastructure.serializers.NumericBooleanSerializer;
+import lab.serializers.NumericBooleanDeserializer;
+import lab.serializers.NumericBooleanSerializer;
 
 public abstract class DeliveryEventBase extends WebhookEventBase
 {

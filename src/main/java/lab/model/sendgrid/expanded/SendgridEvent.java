@@ -1,7 +1,7 @@
-package lab.pojo2jsonschema.model.sendgrid.expanded;
+package lab.model.sendgrid.expanded;
 
 
-import lab.pojo2jsonschema.model.sendgrid.WebhookEventBase;
+import lab.model.sendgrid.WebhookEventBase;
 
 public class SendgridEvent {
 

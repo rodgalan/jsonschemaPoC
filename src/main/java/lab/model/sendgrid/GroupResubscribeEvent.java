@@ -1,4 +1,4 @@
-package lab.pojo2jsonschema.model.sendgrid;
+package lab.model.sendgrid;
 
 public class GroupResubscribeEvent extends EngagementEventBase
 {

@@ -1,4 +1,4 @@
-package lab.pojo2jsonschema.model.sendgrid;
+package lab.model.sendgrid;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;

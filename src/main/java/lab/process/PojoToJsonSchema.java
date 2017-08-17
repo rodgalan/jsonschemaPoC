@@ -1,17 +1,14 @@
-package lab.pojo2jsonschema;
+package lab.process;
 
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchemaGenerator;
-import com.fasterxml.jackson.module.jsonSchema.types.ContainerTypeSchema;
-import lab.pojo2jsonschema.model.sendgrid.*;
-import lab.pojo2jsonschema.model.sendgrid.expanded.SendgridEvent;
+import lab.model.sendgrid.*;
+import lab.model.sendgrid.expanded.SendgridEvent;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Map;
 
 public class PojoToJsonSchema {
 
