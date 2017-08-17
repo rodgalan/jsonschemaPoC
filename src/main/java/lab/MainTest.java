@@ -3,17 +3,17 @@ package lab;
 
 import lab.model.sendgrid.ClickEvent;
 import lab.model.sendgrid.WebhookEventType;
+import lab.process.JsonSchemaToPojo;
 import lab.process.PojoToJson;
 import lab.process.PojoToJsonSchema;
 
 import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.Writer;
 
 public class MainTest {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
 
         //Execute Pojo2JsonSchema
         File filePojo2JsonSchema = new File("src/main/resources/filePojo2JsonSchema_test.jsonschema.json");
@@ -34,9 +34,7 @@ public class MainTest {
 
 
 
-
-
-
-
+        //Execute JsonSchemaToPojo
+        JsonSchemaToPojo.process("plainEvent/SendgridEvent.jsonschema.json", "Pepe", "lab.model.generated.plain");
     }
 }

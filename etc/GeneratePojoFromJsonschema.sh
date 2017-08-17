@@ -1,3 +1,0 @@
-jsonschema2pojo --source ../src/main/resources/click.jsonschema.json --target ../src/main/java -a JACKSON2 -y SendgridEvent -p lab.pojo2jsonschema.model.generated
-jsonschema2pojo --source ../src/main/resources/open.jsonschema.json --target ../src/main/java -a JACKSON2 -y SendgridEvent -p lab.pojo2jsonschema.model.generated
-jsonschema2pojo --source ../src/main/resources/delivered.jsonschema.json --target ../src/main/java -a JACKSON2 -y SendgridEvent -p lab.pojo2jsonschema.model.generated
