@@ -18,7 +18,7 @@ import java.io.Reader;
 public class JsonSchemaToPojo {
 
     public static void process(String jsonSchemaResourceName, String pojoClassName, String pojoPackageName) throws Exception {
-        try(Reader jsonSchemaReader = new FileReader("src/main/resources" + jsonSchemaResourceName)) {
+        try(Reader jsonSchemaReader = new FileReader("src/main/resources/" + jsonSchemaResourceName)) {
             process(jsonSchemaReader, pojoClassName, pojoPackageName, "src/main/java");
         }
     }
