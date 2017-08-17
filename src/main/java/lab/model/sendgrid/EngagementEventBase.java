@@ -53,4 +53,14 @@ public abstract class EngagementEventBase extends WebhookEventBase
 	{
 		certificateError = value;
 	}
+
+	@Override
+	public String toString() {
+		return "EngagementEventBase{" +
+				"userAgent='" + userAgent + '\'' +
+				", ip='" + ip + '\'' +
+				", tls=" + tls +
+				", certificateError=" + certificateError +
+				'}';
+	}
 }

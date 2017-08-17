@@ -3,13 +3,12 @@ package lab;
 
 import lab.model.sendgrid.ClickEvent;
 import lab.model.sendgrid.WebhookEventType;
+import lab.process.Json2Pojo;
 import lab.process.JsonSchemaToPojo;
 import lab.process.PojoToJson;
 import lab.process.PojoToJsonSchema;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.Writer;
+import java.io.*;
 
 public class MainTest {
 
@@ -32,9 +31,13 @@ public class MainTest {
         Writer writerPojo2Json = new FileWriter(filePojo2Json);
         PojoToJson.process(click,writerPojo2Json);
 
-
-
         //Execute JsonSchemaToPojo
         JsonSchemaToPojo.process("plainEvent/SendgridEvent.jsonschema.json", "Pepe", "lab.model.generated.plain");
+
+        //Execute Json2Pojo
+        Reader json2PojoReader = new FileReader("src/main/resources/Pojo2Json_test.json");
+        ClickEvent clickEvent = Json2Pojo.process(json2PojoReader, ClickEvent.class);
+        System.out.println(clickEvent);
+
     }
 }

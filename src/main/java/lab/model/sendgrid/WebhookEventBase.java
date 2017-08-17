@@ -103,4 +103,17 @@ public abstract class WebhookEventBase
 	{
 		uniqueParameters = value;
 	}
+
+	@Override
+	public String toString() {
+		return "WebhookEventBase{" +
+				"sendgridMessageId='" + sendgridMessageId + '\'' +
+				", sendgridEventId='" + sendgridEventId + '\'' +
+				", eventType=" + eventType +
+				", email='" + email + '\'' +
+				", category=" + category +
+				", timestamp=" + timestamp +
+				", uniqueParameters=" + uniqueParameters +
+				'}';
+	}
 }

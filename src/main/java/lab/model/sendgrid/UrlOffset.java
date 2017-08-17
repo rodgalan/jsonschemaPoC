@@ -23,4 +23,12 @@ public class UrlOffset
 	{
 		type = value;
 	}
+
+	@Override
+	public String toString() {
+		return "UrlOffset{" +
+				"index=" + index +
+				", type='" + type + '\'' +
+				'}';
+	}
 }
