@@ -32,6 +32,16 @@ public class JsonSchemaToPojo {
             public AnnotationStyle getAnnotationStyle() {
                 return AnnotationStyle.JACKSON2;
             }
+
+            @Override
+            public boolean isIncludeJsr303Annotations() {
+                return true;
+            }
+
+            @Override
+            public boolean isIncludeJsr305Annotations() {
+                return false;
+            }
         };
 
         SchemaMapper mapper = new SchemaMapper(
