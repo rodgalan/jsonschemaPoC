@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Example schema.",
+  "id": "http://schema.spain.schibsted.io/events/common/Dummy-Event.json/1.json#",
+  "properties": {
+    "SendgridEvent": {
+      "description": "Object used as an example",
+      "oneOf": [
+        {
+          "$ref": "ClickEvent.jsonschema.json#",
+          "$ref": "DeliveredEvent.jsonSchema.json#",
+          "$ref": "OpenEvent.jsonschema.json#"
+        }
+      ]
+    }
+  },
+  "required": [
+    "SendgridEvent"
+  ],
+  "title": "SendgridEvent"
+}

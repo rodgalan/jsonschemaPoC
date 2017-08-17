@@ -1,0 +1,64 @@
+{
+  "type": "object",
+  "id": "urn:jsonschema:lab:pojo2jsonschema:model:sendgrid:ClickEvent",
+  "properties": {
+    "email": {
+      "type": "string"
+    },
+    "category": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "timestamp": {
+      "type": "integer"
+    },
+    "uniqueParameters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "ip": {
+      "type": "string"
+    },
+    "tls": {
+      "type": "boolean"
+    },
+    "url": {
+      "type": "string"
+    },
+    "sg_message_id": {
+      "type": "string"
+    },
+    "sg_event_id": {
+      "type": "string"
+    },
+    "event": {
+      "type": "string",
+      "enum": [
+        "Click"
+      ]
+    },
+    "useragent": {
+      "type": "string"
+    },
+    "cert_err": {
+      "type": "boolean"
+    },
+    "url_offset": {
+      "type": "object",
+      "id": "urn:jsonschema:lab:pojo2jsonschema:model:sendgrid:UrlOffset",
+      "properties": {
+        "index": {
+          "type": "integer"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required" : ["email","sg_message_id", "sg_event_id", "event", "timestamp"]
+}

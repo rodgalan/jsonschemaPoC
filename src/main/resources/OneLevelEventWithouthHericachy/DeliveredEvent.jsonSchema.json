@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "id": "urn:jsonschema:lab:pojo2jsonschema:model:sendgrid:DeliveryEvent",
+  "properties": {
+    "email": {
+      "type": "string"
+    },
+    "category": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "timestamp": {
+      "type": "integer"
+    },
+    "uniqueParameters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "ip": {
+      "type": "string"
+    },
+    "tls": {
+      "type": "boolean"
+    },
+    "sg_message_id": {
+      "type": "string"
+    },
+    "sg_event_id": {
+      "type": "string"
+    },
+    "event": {
+      "type": "string",
+      "enum": [
+        "Delivered"
+      ]
+    },
+    "smtp-id": {
+      "type": "string"
+    },
+    "cert_err": {
+      "type": "boolean"
+    }
+  },
+  "required" : ["email","sg_message_id", "sg_event_id", "event", "timestamp"]
+}
