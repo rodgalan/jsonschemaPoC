@@ -17,6 +17,8 @@ import java.io.Reader;
 
 public class JsonSchemaToPojo {
 
+    private static final JCodeModel codeModel = new JCodeModel();
+
     public static void process(String jsonSchemaResourceName, String pojoClassName, String pojoPackageName) throws Exception {
         try(Reader jsonSchemaReader = new FileReader("src/main/resources/" + jsonSchemaResourceName)) {
             process(jsonSchemaReader, pojoClassName, pojoPackageName, "src/main/java");
@@ -24,7 +26,6 @@ public class JsonSchemaToPojo {
     }
 
     public static void process(Reader jsonSchema, String pojoClassName, String pojoPackageName, String pojoDestDirName) throws Exception {
-        JCodeModel codeModel = new JCodeModel();
 
         GenerationConfig config = new DefaultGenerationConfig() {
             @Override
