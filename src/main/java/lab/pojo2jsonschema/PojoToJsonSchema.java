@@ -9,12 +9,14 @@ import com.fasterxml.jackson.module.jsonSchema.types.ContainerTypeSchema;
 import lab.pojo2jsonschema.model.sendgrid.*;
 import lab.pojo2jsonschema.model.sendgrid.expanded.SendgridEvent;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Map;
 
 public class PojoToJsonSchema {
 
     //TODO: Bad required format in schema generated :(
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         JsonSchemaGenerator schemaGen = new JsonSchemaGenerator(mapper);
         JsonSchema schemaClick = schemaGen.generateSchema(ClickEvent.class);
@@ -25,7 +27,17 @@ public class PojoToJsonSchema {
         JsonSchema schemaSendgridEvent = schemaGen.generateSchema(SendgridEvent.class);
 
 
-        String schemaClickString = mapper.writeValueAsString(schemaClick);
+        File clickFile = new File("src/main/resources/click.jsonschema.json");
+        mapper.writeValue(clickFile,schemaClick);
+
+        File openFile = new File("src/main/resources/open.jsonschema.json");
+        mapper.writeValue(openFile,schemaOpen);
+
+        File deliveredFile = new File("src/main/resources/delivered.jsonschema.json");
+        mapper.writeValue(deliveredFile,schemaDelivery);
+
+
+        /*String schemaClickString = mapper.writeValueAsString(schemaClick);
         String schemaOpenString = mapper.writeValueAsString(schemaOpen);
         String schemaDeliveryString = mapper.writeValueAsString(schemaDelivery);
         String schemaWebhookEventBaseString = mapper.writeValueAsString(schemaWebhookEventBase);
@@ -39,6 +51,7 @@ public class PojoToJsonSchema {
         System.out.println("ABSTRACT BASE: "+schemaWebhookEventBaseString);
         System.out.println("ENGAGEMENT BASE: "+schemaEngagementEventBaseString);
         System.out.println("EVENT: "+schemaSengridEvent);
+        */
 
 
     }

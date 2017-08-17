@@ -6,11 +6,13 @@ import lab.pojo2jsonschema.model.sendgrid.ClickEvent;
 import lab.pojo2jsonschema.model.sendgrid.WebhookEventType;
 import lab.pojo2jsonschema.model.sendgrid.expanded.SendgridEvent;
 
+
 import java.io.IOException;
 
 public class TestPolymorfic {
 
-  public static void main (String[] args) throws IOException {
+  @Test
+  public void test (String[] args) throws IOException {
 
     //TEST JAVA --> JSON
     SendgridEvent event = new SendgridEvent();
