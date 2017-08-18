@@ -7,10 +7,7 @@ import java.util.List;
 import java.util.Map;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -96,9 +93,6 @@ public class ClickEvent {
     @JsonProperty("url_offset")
     @Valid
     private UrlOffset urlOffset;
-    @JsonIgnore
-    @Valid
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * 
@@ -285,19 +279,9 @@ public class ClickEvent {
         return ToStringBuilder.reflectionToString(this);
     }
 
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
-
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(email).append(category).append(timestamp).append(uniqueParameters).append(ip).append(tls).append(url).append(sgMessageId).append(sgEventId).append(event).append(useragent).append(certErr).append(urlOffset).append(additionalProperties).toHashCode();
+        return new HashCodeBuilder().append(email).append(category).append(timestamp).append(uniqueParameters).append(ip).append(tls).append(url).append(sgMessageId).append(sgEventId).append(event).append(useragent).append(certErr).append(urlOffset).toHashCode();
     }
 
     @Override
@@ -309,7 +293,7 @@ public class ClickEvent {
             return false;
         }
         ClickEvent rhs = ((ClickEvent) other);
-        return new EqualsBuilder().append(email, rhs.email).append(category, rhs.category).append(timestamp, rhs.timestamp).append(uniqueParameters, rhs.uniqueParameters).append(ip, rhs.ip).append(tls, rhs.tls).append(url, rhs.url).append(sgMessageId, rhs.sgMessageId).append(sgEventId, rhs.sgEventId).append(event, rhs.event).append(useragent, rhs.useragent).append(certErr, rhs.certErr).append(urlOffset, rhs.urlOffset).append(additionalProperties, rhs.additionalProperties).isEquals();
+        return new EqualsBuilder().append(email, rhs.email).append(category, rhs.category).append(timestamp, rhs.timestamp).append(uniqueParameters, rhs.uniqueParameters).append(ip, rhs.ip).append(tls, rhs.tls).append(url, rhs.url).append(sgMessageId, rhs.sgMessageId).append(sgEventId, rhs.sgEventId).append(event, rhs.event).append(useragent, rhs.useragent).append(certErr, rhs.certErr).append(urlOffset, rhs.urlOffset).isEquals();
     }
 
     public enum Event {

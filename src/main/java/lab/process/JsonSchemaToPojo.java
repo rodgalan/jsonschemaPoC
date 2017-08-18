@@ -42,6 +42,11 @@ public class JsonSchemaToPojo {
             public boolean isIncludeJsr305Annotations() {
                 return false;
             }
+
+            @Override
+            public boolean isIncludeAdditionalProperties() {
+                return false;
+            }
         };
 
         SchemaMapper mapper = new SchemaMapper(
