@@ -1,0 +1,14 @@
+{
+  "email" : "click@click.click",
+  "category" : null,
+  "timestamp" : 0,
+  "ip" : null,
+  "tls" : "0",
+  "url" : "http://click.com",
+  "sg_message_id" : "messageId",
+  "sg_event_id" : "eventId",
+  "event" : "Click",
+  "useragent" : null,
+  "cert_err" : "0",
+  "url_offset" : null
+}
