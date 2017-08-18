@@ -1,0 +1,60 @@
+{
+  "type" : "object",
+  "id" : "urn:jsonschema:lab:model:plain:SendgridEvent",
+  "properties" : {
+    "email" : {
+      "type" : "string",
+      "required" : true
+    },
+    "category" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      }
+    },
+    "timestamp" : {
+      "type" : "integer"
+    },
+    "ip" : {
+      "type" : "string"
+    },
+    "tls" : {
+      "type" : "any"
+    },
+    "url" : {
+      "type" : "string",
+      "required" : true
+    },
+    "sg_message_id" : {
+      "type" : "string",
+      "required" : true
+    },
+    "sg_event_id" : {
+      "type" : "string",
+      "required" : true
+    },
+    "event" : {
+      "type" : "string",
+      "required" : true,
+      "enum" : [ "Processed", "Dropped", "Delivered", "Deferred", "Bounce", "Open", "Click", "SpamReport", "Unsubscribe", "Group_Unsubscribe", "Group_Resubscribe" ]
+    },
+    "useragent" : {
+      "type" : "string"
+    },
+    "cert_err" : {
+      "type" : "any"
+    },
+    "url_offset" : {
+      "type" : "object",
+      "id" : "urn:jsonschema:lab:model:sendgrid:UrlOffset",
+      "properties" : {
+        "index" : {
+          "type" : "integer"
+        },
+        "type" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

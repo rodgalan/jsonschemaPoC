@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lab.serializers.NumericBooleanDeserializer;
 import lab.serializers.NumericBooleanSerializer;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 @JsonTypeName("Open")
 public class OpenEvent extends WebhookEventBase
@@ -65,6 +66,6 @@ public class OpenEvent extends WebhookEventBase
 
     @Override
     public String toString() {
-        return ToStringBuilder.reflectionToString(this);
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
     }
 }

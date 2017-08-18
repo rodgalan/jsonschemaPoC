@@ -3,19 +3,18 @@ package lab;
 
 import lab.model.sendgrid.ClickEvent;
 import lab.model.sendgrid.WebhookEventType;
-import lab.process.JsonToPojo;
 import lab.process.JsonSchemaToPojo;
+import lab.process.JsonToPojo;
 import lab.process.PojoToJson;
 import lab.process.PojoToJsonSchema;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
 
 public class MainProcess {
 
     public static void main(String[] args) throws Exception {
 
         // Execute PojoToJsonSchema
-        PojoToJsonSchema.process(ClickEvent.class, "dummy/ClickEvent.jsonschema.json");
+        PojoToJsonSchema.process(lab.model.plain.SendgridEvent.class, "generated/plain/ClickEvent.jsonschema.json");
+        PojoToJsonSchema.process(lab.model.hierarchy.SendgridEvent.class, "generated/hierarchy/ClickEvent.jsonschema.json");
 
         // Execute PojoToJson
         PojoToJson.process(newPlainEvent(), "generated/plain/ClickEvent.json");

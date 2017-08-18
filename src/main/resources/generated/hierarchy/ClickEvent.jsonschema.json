@@ -1,0 +1,47 @@
+{
+  "type" : "object",
+  "id" : "urn:jsonschema:lab:model:hierarchy:SendgridEvent",
+  "properties" : {
+    "event" : {
+      "type" : "object",
+      "id" : "urn:jsonschema:lab:model:hierarchy:WebhookEventBase",
+      "properties" : {
+        "email" : {
+          "type" : "string",
+          "required" : true
+        },
+        "category" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "timestamp" : {
+          "type" : "integer"
+        },
+        "ip" : {
+          "type" : "string"
+        },
+        "tls" : {
+          "type" : "any"
+        },
+        "sg_message_id" : {
+          "type" : "string",
+          "required" : true
+        },
+        "sg_event_id" : {
+          "type" : "string",
+          "required" : true
+        },
+        "event" : {
+          "type" : "string",
+          "required" : true,
+          "enum" : [ "Processed", "Dropped", "Delivered", "Deferred", "Bounce", "Open", "Click", "SpamReport", "Unsubscribe", "Group_Unsubscribe", "Group_Resubscribe" ]
+        },
+        "cert_err" : {
+          "type" : "any"
+        }
+      }
+    }
+  }
+}
