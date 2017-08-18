@@ -25,7 +25,7 @@ public class JsonSchemaToPojo {
         }
     }
 
-    public static void process(Reader jsonSchema, String pojoClassName, String pojoPackageName, String pojoDestDirName) throws Exception {
+    public static void process(Reader jsonSchemaReader, String pojoClassName, String pojoPackageName, String pojoDestDirName) throws Exception {
 
         GenerationConfig config = new DefaultGenerationConfig() {
             @Override
@@ -48,7 +48,7 @@ public class JsonSchemaToPojo {
                 new RuleFactory(config, new Jackson2Annotator(config), new SchemaStore()),
                 new SchemaGenerator()
         );
-        mapper.generate(codeModel, pojoClassName, pojoPackageName, IOUtils.toString(jsonSchema));
+        mapper.generate(codeModel, pojoClassName, pojoPackageName, IOUtils.toString(jsonSchemaReader));
 
         File pojoDestDir = new File(pojoDestDirName);
         pojoDestDir.mkdirs();

@@ -2,7 +2,6 @@ package lab.model.sendgrid;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import org.apache.commons.lang3.builder.ToStringBuilder;
 
 @JsonTypeName("Click")
 public class ClickEvent extends EngagementEventBase
@@ -28,10 +27,5 @@ public class ClickEvent extends EngagementEventBase
 	public final void setUrlOffset(UrlOffset value)
 	{
 		urlOffset = value;
-	}
-
-	@Override
-	public String toString() {
-		return ToStringBuilder.reflectionToString(this);
 	}
 }
