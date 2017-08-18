@@ -15,7 +15,8 @@ public class MainProcess {
     public static void main(String[] args) throws Exception {
 
         // Execute PojoToJsonSchema
-        PojoToJsonSchema.process(ClickEvent.class, "dummy/ClickEvent.jsonschema.json");
+        PojoToJsonSchema.process(lab.model.plain.SendgridEvent.class, "generated/plain/ClickEvent.jsonschema.json");
+        PojoToJsonSchema.process(lab.model.hierarchy.SendgridEvent.class, "generated/hierarchy/ClickEvent.jsonschema.json");
 
         // Execute PojoToJson
         PojoToJson.process(newPlainEvent(), "generated/plain/ClickEvent.json");
