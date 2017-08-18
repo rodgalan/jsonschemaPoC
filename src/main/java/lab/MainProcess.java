@@ -20,7 +20,7 @@ public class MainProcess {
         // Execute PojoToJson
         PojoToJson.process(newClickEvent(), "generated/dummy/ClickEvent.json");
 
-        //Execute JsonSchemaToPojo
+        // Execute JsonSchemaToPojo
         JsonSchemaToPojo.process("dummy/ClickEvent.jsonschema.json", "ClickEvent", "lab.model.generated.dummy");
 
         // Execute JsonToPojo
