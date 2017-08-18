@@ -20,7 +20,7 @@ public class MainProcess {
         // Execute PojoToJson
         PojoToJson.process(newClickEvent(), "generated/dummy/ClickEvent.json");
         PojoToJson.process(newPlainEvent(), "generated/plain/ClickEvent.json");
-        PojoToJson.process(newHierachyEvent(), "generated/hierarchy/ClickEvent.json");
+        PojoToJson.process(newHierarchyEvent(), "generated/hierarchy/ClickEvent.json");
 
         // Execute JsonSchemaToPojo
         JsonSchemaToPojo.process("dummy/ClickEvent.jsonschema.json", "ClickEvent", "lab.model.generated.dummy");
@@ -50,7 +50,7 @@ public class MainProcess {
         return plainEvent;
     }
 
-    private static lab.model.hierarchy.SendgridEvent newHierachyEvent(){
+    private static lab.model.hierarchy.SendgridEvent newHierarchyEvent(){
         lab.model.hierarchy.SendgridEvent hierarchyEvent = new lab.model.hierarchy.SendgridEvent();
 
         lab.model.hierarchy.ClickEvent clickEvent = new lab.model.hierarchy.ClickEvent();
