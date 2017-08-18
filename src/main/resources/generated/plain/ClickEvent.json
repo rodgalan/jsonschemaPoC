@@ -2,7 +2,6 @@
   "email" : "click@click.click",
   "category" : null,
   "timestamp" : 0,
-  "uniqueParameters" : null,
   "ip" : null,
   "tls" : "0",
   "url" : "http://click.com",

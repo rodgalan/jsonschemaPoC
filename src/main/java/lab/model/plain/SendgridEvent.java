@@ -33,8 +33,6 @@ public class SendgridEvent {
     //TODO: Format date to Activity Steram 2.0 format
     private long timestamp;
 
-    private Map<String, String> uniqueParameters;
-
     //FROM ENGAGEMENT EVENT
     @JsonProperty(value="useragent")
     private String userAgent;
@@ -103,14 +101,6 @@ public class SendgridEvent {
 
     public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
-    }
-
-    public Map<String, String> getUniqueParameters() {
-        return uniqueParameters;
-    }
-
-    public void setUniqueParameters(Map<String, String> uniqueParameters) {
-        this.uniqueParameters = uniqueParameters;
     }
 
     public String getUserAgent() {
