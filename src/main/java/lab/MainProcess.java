@@ -19,6 +19,8 @@ public class MainProcess {
 
         // Execute PojoToJson
         PojoToJson.process(newClickEvent(), "generated/dummy/ClickEvent.json");
+        PojoToJson.process(newPlainEvent(), "generated/plain/ClickEvent.json");
+        PojoToJson.process(newHierarchyEvent(), "generated/hierarchy/ClickEvent.json");
 
         // Execute JsonSchemaToPojo
         JsonSchemaToPojo.process("dummy/ClickEvent.jsonschema.json", "ClickEvent", "lab.model.generated.dummy");
@@ -36,5 +38,28 @@ public class MainProcess {
         click.setSendgridMessageId("messageId");
         click.setEventType(WebhookEventType.Click);
         return click;
+    }
+
+    private static lab.model.plain.SendgridEvent newPlainEvent(){
+        lab.model.plain.SendgridEvent plainEvent = new lab.model.plain.SendgridEvent();
+        plainEvent.setEmail("click@click.click");
+        plainEvent.setUrl("http://click.com");
+        plainEvent.setSendgridEventId("eventId");
+        plainEvent.setSendgridMessageId("messageId");
+        plainEvent.setEventType(lab.model.plain.WebhookEventType.Click);
+        return plainEvent;
+    }
+
+    private static lab.model.hierarchy.SendgridEvent newHierarchyEvent(){
+        lab.model.hierarchy.SendgridEvent hierarchyEvent = new lab.model.hierarchy.SendgridEvent();
+
+        lab.model.hierarchy.ClickEvent clickEvent = new lab.model.hierarchy.ClickEvent();
+        clickEvent.setEmail("click@click.click");
+        clickEvent.setUrl("http://click.com");
+        clickEvent.setSendgridEventId("eventId");
+        clickEvent.setSendgridMessageId("messageId");
+
+        hierarchyEvent.setEvent(clickEvent);
+        return hierarchyEvent;
     }
 }
