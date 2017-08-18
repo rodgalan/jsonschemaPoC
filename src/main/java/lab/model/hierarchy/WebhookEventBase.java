@@ -47,9 +47,6 @@ public abstract class WebhookEventBase
 	//TODO: Format date to Activity Steram 2.0 format
 	private long timestamp;
 
-
-	private Map<String, String> uniqueParameters;
-
 	//COMMON IN EGAGEMENT AND DELIVERY EVENTS
 	private String ip;
 
@@ -100,14 +97,6 @@ public abstract class WebhookEventBase
 
 	public void setTimestamp(long timestamp) {
 		this.timestamp = timestamp;
-	}
-
-	public Map<String, String> getUniqueParameters() {
-		return uniqueParameters;
-	}
-
-	public void setUniqueParameters(Map<String, String> uniqueParameters) {
-		this.uniqueParameters = uniqueParameters;
 	}
 
 	public String getIp() {
