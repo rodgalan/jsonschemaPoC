@@ -7,7 +7,7 @@ import lab.helpers.ObjectMapperFactory;
 import java.io.FileReader;
 import java.io.Reader;
 
-public class Json2Pojo {
+public class JsonToPojo {
 
     private static final ObjectMapper mapper = ObjectMapperFactory.create();
 

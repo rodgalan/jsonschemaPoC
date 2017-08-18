@@ -3,7 +3,7 @@ package lab;
 
 import lab.model.sendgrid.ClickEvent;
 import lab.model.sendgrid.WebhookEventType;
-import lab.process.Json2Pojo;
+import lab.process.JsonToPojo;
 import lab.process.JsonSchemaToPojo;
 import lab.process.PojoToJson;
 import lab.process.PojoToJsonSchema;
@@ -23,8 +23,8 @@ public class MainProcess {
         //Execute JsonSchemaToPojo
         JsonSchemaToPojo.process("dummy/ClickEvent.jsonschema.json", "ClickEvent", "lab.model.generated.dummy");
 
-        // Execute Json2Pojo
-        ClickEvent clickEvent = Json2Pojo.process("dummy/ClickEvent.json", ClickEvent.class);
+        // Execute JsonToPojo
+        ClickEvent clickEvent = JsonToPojo.process("dummy/ClickEvent.json", ClickEvent.class);
         System.out.println(ToStringBuilder.reflectionToString(clickEvent, ToStringStyle.MULTI_LINE_STYLE));
     }
 
