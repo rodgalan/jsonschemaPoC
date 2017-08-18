@@ -3,12 +3,10 @@ package lab;
 
 import lab.model.sendgrid.ClickEvent;
 import lab.model.sendgrid.WebhookEventType;
-import lab.process.JsonToPojo;
 import lab.process.JsonSchemaToPojo;
+import lab.process.JsonToPojo;
 import lab.process.PojoToJson;
 import lab.process.PojoToJsonSchema;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
 
 public class MainProcess {
 

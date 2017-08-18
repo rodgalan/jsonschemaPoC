@@ -3,6 +3,7 @@ package lab.model.hierarchy;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 @JsonTypeName("Click")
 public class ClickEvent extends WebhookEventBase
@@ -49,6 +50,6 @@ public class ClickEvent extends WebhookEventBase
 
 	@Override
 	public String toString() {
-		return ToStringBuilder.reflectionToString(this);
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
 	}
 }
