@@ -19,8 +19,8 @@ public class MainProcess {
 
         // Execute PojoToJson
         PojoToJson.process(newClickEvent(), "generated/dummy/ClickEvent.json");
-        PojoToJson.process(newPlainEvent(), "generated/PlainClickEvent.json");
-        PojoToJson.process(newHierachyEvent(), "generated/HierarchyClickEvent.json");
+        PojoToJson.process(newPlainEvent(), "generated/plain/ClickEvent.json");
+        PojoToJson.process(newHierachyEvent(), "generated/hierarchy/ClickEvent.json");
 
         // Execute JsonSchemaToPojo
         JsonSchemaToPojo.process("dummy/ClickEvent.jsonschema.json", "ClickEvent", "lab.model.generated.dummy");
