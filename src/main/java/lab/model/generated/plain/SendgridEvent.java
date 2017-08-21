@@ -1,5 +1,5 @@
 
-package lab.model.generated.dummy;
+package lab.model.generated.plain;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,7 +21,6 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "email",
     "category",
     "timestamp",
-    "uniqueParameters",
     "ip",
     "tls",
     "url",
@@ -32,24 +31,21 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "cert_err",
     "url_offset"
 })
-public class ClickEvent {
+public class SendgridEvent {
 
     /**
      * 
      * (Required)
      * 
      */
-    @NotNull
     @JsonProperty("email")
+    @NotNull
     private String email;
     @JsonProperty("category")
     @Valid
     private List<String> category = new ArrayList<String>();
     @JsonProperty("timestamp")
     private Integer timestamp;
-    @JsonProperty("uniqueParameters")
-    @Valid
-    private UniqueParameters uniqueParameters;
     @JsonProperty("ip")
     private String ip;
     @JsonProperty("tls")
@@ -59,33 +55,33 @@ public class ClickEvent {
      * (Required)
      * 
      */
-    @NotNull
     @JsonProperty("url")
+    @NotNull
     private String url;
     /**
      * 
      * (Required)
      * 
      */
-    @NotNull
     @JsonProperty("sg_message_id")
+    @NotNull
     private String sgMessageId;
     /**
      * 
      * (Required)
      * 
      */
-    @NotNull
     @JsonProperty("sg_event_id")
+    @NotNull
     private String sgEventId;
     /**
      * 
      * (Required)
      * 
      */
-    @NotNull
     @JsonProperty("event")
-    private ClickEvent.Event event;
+    @NotNull
+    private SendgridEvent.Event event;
     @JsonProperty("useragent")
     private String useragent;
     @JsonProperty("cert_err")
@@ -132,16 +128,6 @@ public class ClickEvent {
     @JsonProperty("timestamp")
     public void setTimestamp(Integer timestamp) {
         this.timestamp = timestamp;
-    }
-
-    @JsonProperty("uniqueParameters")
-    public UniqueParameters getUniqueParameters() {
-        return uniqueParameters;
-    }
-
-    @JsonProperty("uniqueParameters")
-    public void setUniqueParameters(UniqueParameters uniqueParameters) {
-        this.uniqueParameters = uniqueParameters;
     }
 
     @JsonProperty("ip")
@@ -230,7 +216,7 @@ public class ClickEvent {
      * 
      */
     @JsonProperty("event")
-    public ClickEvent.Event getEvent() {
+    public SendgridEvent.Event getEvent() {
         return event;
     }
 
@@ -240,7 +226,7 @@ public class ClickEvent {
      * 
      */
     @JsonProperty("event")
-    public void setEvent(ClickEvent.Event event) {
+    public void setEvent(SendgridEvent.Event event) {
         this.event = event;
     }
 
@@ -281,7 +267,7 @@ public class ClickEvent {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(email).append(category).append(timestamp).append(uniqueParameters).append(ip).append(tls).append(url).append(sgMessageId).append(sgEventId).append(event).append(useragent).append(certErr).append(urlOffset).toHashCode();
+        return new HashCodeBuilder().append(email).append(category).append(timestamp).append(ip).append(tls).append(url).append(sgMessageId).append(sgEventId).append(event).append(useragent).append(certErr).append(urlOffset).toHashCode();
     }
 
     @Override
@@ -289,11 +275,11 @@ public class ClickEvent {
         if (other == this) {
             return true;
         }
-        if ((other instanceof ClickEvent) == false) {
+        if ((other instanceof SendgridEvent) == false) {
             return false;
         }
-        ClickEvent rhs = ((ClickEvent) other);
-        return new EqualsBuilder().append(email, rhs.email).append(category, rhs.category).append(timestamp, rhs.timestamp).append(uniqueParameters, rhs.uniqueParameters).append(ip, rhs.ip).append(tls, rhs.tls).append(url, rhs.url).append(sgMessageId, rhs.sgMessageId).append(sgEventId, rhs.sgEventId).append(event, rhs.event).append(useragent, rhs.useragent).append(certErr, rhs.certErr).append(urlOffset, rhs.urlOffset).isEquals();
+        SendgridEvent rhs = ((SendgridEvent) other);
+        return new EqualsBuilder().append(email, rhs.email).append(category, rhs.category).append(timestamp, rhs.timestamp).append(ip, rhs.ip).append(tls, rhs.tls).append(url, rhs.url).append(sgMessageId, rhs.sgMessageId).append(sgEventId, rhs.sgEventId).append(event, rhs.event).append(useragent, rhs.useragent).append(certErr, rhs.certErr).append(urlOffset, rhs.urlOffset).isEquals();
     }
 
     public enum Event {
@@ -310,10 +296,10 @@ public class ClickEvent {
         GROUP_UNSUBSCRIBE("Group_Unsubscribe"),
         GROUP_RESUBSCRIBE("Group_Resubscribe");
         private final String value;
-        private final static Map<String, ClickEvent.Event> CONSTANTS = new HashMap<String, ClickEvent.Event>();
+        private final static Map<String, SendgridEvent.Event> CONSTANTS = new HashMap<String, SendgridEvent.Event>();
 
         static {
-            for (ClickEvent.Event c: values()) {
+            for (SendgridEvent.Event c: values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -333,8 +319,8 @@ public class ClickEvent {
         }
 
         @JsonCreator
-        public static ClickEvent.Event fromValue(String value) {
-            ClickEvent.Event constant = CONSTANTS.get(value);
+        public static SendgridEvent.Event fromValue(String value) {
+            SendgridEvent.Event constant = CONSTANTS.get(value);
             if (constant == null) {
                 throw new IllegalArgumentException(value);
             } else {

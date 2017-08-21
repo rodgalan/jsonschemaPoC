@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type" : "object",
+  "id" : "urn:jsonschema:lab:model:composite:ClickEvent",
+  "properties" : {
+    "base_event":{
+      "$ref": "file:/Users/anna.rodriguez/Fotocasa/jsonschemaPoC/src/main/resources/composite/WebhookEventBase.jsonschema.json"
+    },
+    "url" : {
+      "type" : "string"
+    },
+    "useragent" : {
+      "type" : "string"
+    },
+    "url_offset": {
+      "$ref": "file:/Users/anna.rodriguez/Fotocasa/jsonschemaPoC/src/main/resources/composite/UrlOffset.jsonschema.json",
+      "description": "Link position"
+    }
+  },
+  "required" : ["url", "base_event"]
+}

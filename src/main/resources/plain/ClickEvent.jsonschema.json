@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type" : "object",
+  "id" : "urn:jsonschema:lab:model:plain:SendgridEvent",
+  "properties" : {
+    "email" : {
+      "type" : "string"
+    },
+    "category" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      }
+    },
+    "timestamp" : {
+      "type" : "integer"
+    },
+    "ip" : {
+      "type" : "string"
+    },
+    "tls" : {
+      "type" : "any"
+    },
+    "url" : {
+      "type" : "string"
+    },
+    "sg_message_id" : {
+      "type" : "string"
+    },
+    "sg_event_id" : {
+      "type" : "string"
+    },
+    "event" : {
+      "type" : "string",
+      "enum" : [ "Processed", "Dropped", "Delivered", "Deferred", "Bounce", "Open", "Click", "SpamReport", "Unsubscribe", "Group_Unsubscribe", "Group_Resubscribe" ]
+    },
+    "useragent" : {
+      "type" : "string"
+    },
+    "cert_err" : {
+      "type" : "any"
+    },
+
+    "url_offset": {
+      "$ref": "file:/Users/anna.rodriguez/Fotocasa/jsonschemaPoC/src/main/resources/plain/UrlOffset.jsonschema.json",
+      "description": "Link position"
+    }
+  },
+  "required" : ["email", "url", "sg_message_id", "sg_event_id", "event"]
+}

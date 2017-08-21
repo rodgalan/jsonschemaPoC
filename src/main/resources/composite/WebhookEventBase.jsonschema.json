@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type" : "object",
+  "id" : "urn:jsonschema:lab:model:composite:WebhookEventBase",
+  "properties" : {
+    "email" : {
+      "type" : "string"
+    },
+    "category" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      }
+    },
+    "timestamp" : {
+      "type" : "integer"
+    },
+    "ip" : {
+      "type" : "string"
+    },
+    "tls" : {
+      "type" : "any"
+    },
+    "sg_message_id" : {
+      "type" : "string"
+    },
+    "sg_event_id" : {
+      "type" : "string"
+    },
+    "event" : {
+      "type" : "string",
+      "enum" : [ "Processed", "Dropped", "Delivered", "Deferred", "Bounce", "Open", "Click", "SpamReport", "Unsubscribe", "Group_Unsubscribe", "Group_Resubscribe" ]
+    },
+   "cert_err" : {
+      "type" : "any"
+    }
+  },
+  "required" : ["email", "sg_message_id", "sg_event_id", "event"]
+}

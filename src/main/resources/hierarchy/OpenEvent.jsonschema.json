@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "allOf": [
+    {
+      "$ref": "file://Users/anna.rodriguez/Fotocasa/jsonschemaPoC/src/main/resources/hierarchy/WebhookEventBase.json"
+    }
+  ],
+  "type" : "object",
+  "id" : "urn:jsonschema:lab:model:hierarchy:OpenEvent"
+}

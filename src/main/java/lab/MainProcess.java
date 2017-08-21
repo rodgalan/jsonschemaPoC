@@ -20,8 +20,21 @@ public class MainProcess {
         PojoToJson.process(newPlainEvent(), "generated/plain/ClickEvent.json");
         PojoToJson.process(newHierarchyEvent(), "generated/hierarchy/ClickEvent.json");
 
-        // Execute JsonSchemaToPojo
-        JsonSchemaToPojo.process("dummy/ClickEvent.jsonschema.json", "ClickEvent", "lab.model.generated.dummy");
+        // Execute JsonSchemaToPojo (error ab referencies relatives, se suposa que ho hauria de suportar)
+        JsonSchemaToPojo.process("plain/ClickEvent.jsonschema.json", "SendgridEvent", "lab.model.generated.plain");
+
+        // Execute JsonSchemaToPojo (error ab referencies relatives, se suposa que ho hauria de suportar)
+        JsonSchemaToPojo.process("hierarchy/ClickEvent.jsonschema.json", "SendgridEvent", "lab.model.generated.hierarchy");
+
+        // Execute JsonSchemaToPojo (error ab referencies relatives, se suposa que ho hauria de suportar)
+        JsonSchemaToPojo.process("composite/SendgridEvent.jsonschema.json", "SendgridEvent", "lab.model.generated.composite");
+
+        /*Test worksi schema
+        URL worksiUrl = new URL("http://schema.spain.schibsted.io/events/worksi/Interview-Event.json/2.json");
+        URLReader worksireader = new URLReader(worksiUrl);
+        JsonSchemaToPojo.process(worksireader, "WorksiEvent", "lab.model.generated.worksi", "src/main/java");
+        */
+
 
         // Execute JsonToPojo
         lab.model.plain.SendgridEvent plainEvent = JsonToPojo.process("plain/ClickEvent.json", lab.model.plain.SendgridEvent.class);

@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type" : "object",
+  "id" : "urn:jsonschema:lab:model:composite:OpenEvent",
+  "properties" : {
+    "base_event": {
+      "$ref": "file:/Users/anna.rodriguez/Fotocasa/jsonschemaPoC/src/main/resources/composite/WebhookEventBase.jsonschema.json"
+    }
+  },
+  "required" : ["base_event"]
+}

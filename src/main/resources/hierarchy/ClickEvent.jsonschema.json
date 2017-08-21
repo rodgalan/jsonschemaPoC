@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "allOf": [
+    {
+      "$ref": "file://Users/anna.rodriguez/Fotocasa/jsonschemaPoC/src/main/resources/hierarchy/WebhookEventBase.json"
+    }
+  ],
+  "type" : "object",
+  "id" : "urn:jsonschema:lab:model:hierarchy:ClickEvent",
+  "properties" : {
+    "url" : {
+      "type" : "string"
+    },
+    "useragent" : {
+      "type" : "string"
+    },
+    "url_offset": {
+      "$ref": "file:/Users/anna.rodriguez/Fotocasa/jsonschemaPoC/src/main/resources/hierarchy/UrlOffset.jsonschema.json",
+      "description": "Link position"
+    }
+  },
+  "required" : ["url"]
+}

@@ -1,5 +1,5 @@
 
-package lab.model.generated.dummy;
+package lab.model.generated.plain;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

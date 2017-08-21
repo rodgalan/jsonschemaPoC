@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "anyOf": [
+    {
+      "$ref": "file://Users/anna.rodriguez/Fotocasa/jsonschemaPoC/src/main/resources/hierarchy/ClickEvent.json",
+      "$ref": "file://Users/anna.rodriguez/Fotocasa/jsonschemaPoC/src/main/resources/hierarchy/OpenEvent.json"
+    }
+  ],
+  "id" : "urn:jsonschema:lab:model:hierarchy:SendgridEvent",
+  "title": "SendgridEvent"
+}

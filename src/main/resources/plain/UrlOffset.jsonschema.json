@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "urn:jsonschema:lab:model:plain:UrlOffset",
+    "properties" : {
+      "index": {
+        "type": "integer"
+      },
+      "type": {
+        "type": "string"
+      }
+    },
+    "type" : "object"
+}
