@@ -1,5 +1,5 @@
 
-package lab.model.generated.hierarchy;
+package lab.model.generated.composite;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -12,12 +12,22 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+    "base_event",
     "url",
     "useragent",
     "url_offset"
 })
-public class SendgridEvent {
+public class ClickEvent {
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    @JsonProperty("base_event")
+    @Valid
+    @NotNull
+    private BaseEvent baseEvent;
     /**
      * 
      * (Required)
@@ -31,6 +41,26 @@ public class SendgridEvent {
     @JsonProperty("url_offset")
     @Valid
     private UrlOffset urlOffset;
+
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    @JsonProperty("base_event")
+    public BaseEvent getBaseEvent() {
+        return baseEvent;
+    }
+
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    @JsonProperty("base_event")
+    public void setBaseEvent(BaseEvent baseEvent) {
+        this.baseEvent = baseEvent;
+    }
 
     /**
      * 
@@ -79,7 +109,7 @@ public class SendgridEvent {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(url).append(useragent).append(urlOffset).toHashCode();
+        return new HashCodeBuilder().append(baseEvent).append(url).append(useragent).append(urlOffset).toHashCode();
     }
 
     @Override
@@ -87,11 +117,11 @@ public class SendgridEvent {
         if (other == this) {
             return true;
         }
-        if ((other instanceof SendgridEvent) == false) {
+        if ((other instanceof ClickEvent) == false) {
             return false;
         }
-        SendgridEvent rhs = ((SendgridEvent) other);
-        return new EqualsBuilder().append(url, rhs.url).append(useragent, rhs.useragent).append(urlOffset, rhs.urlOffset).isEquals();
+        ClickEvent rhs = ((ClickEvent) other);
+        return new EqualsBuilder().append(baseEvent, rhs.baseEvent).append(url, rhs.url).append(useragent, rhs.useragent).append(urlOffset, rhs.urlOffset).isEquals();
     }
 
 }

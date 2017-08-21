@@ -21,10 +21,10 @@ public class MainProcess {
         PojoToJson.process(newHierarchyEvent(), "generated/hierarchy/ClickEvent.json");
 
         // Execute JsonSchemaToPojo (error ab referencies relatives, se suposa que ho hauria de suportar)
-        JsonSchemaToPojo.process("plain/ClickEvent.jsonschema.json", "SendgridEvent", "lab.model.generated.plain");
+        JsonSchemaToPojo.process("plain/SendgridEvent.jsonschema.json", "SendgridEvent", "lab.model.generated.plain");
 
         // Execute JsonSchemaToPojo (error ab referencies relatives, se suposa que ho hauria de suportar)
-        JsonSchemaToPojo.process("hierarchy/ClickEvent.jsonschema.json", "SendgridEvent", "lab.model.generated.hierarchy");
+        JsonSchemaToPojo.process("hierarchy/SendgridEvent.jsonschema.json", "SendgridEvent", "lab.model.generated.hierarchy");
 
         // Execute JsonSchemaToPojo (error ab referencies relatives, se suposa que ho hauria de suportar)
         JsonSchemaToPojo.process("composite/SendgridEvent.jsonschema.json", "SendgridEvent", "lab.model.generated.composite");

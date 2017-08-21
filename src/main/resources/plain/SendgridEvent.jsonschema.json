@@ -46,5 +46,5 @@
       "description": "Link position"
     }
   },
-  "required" : ["email", "url", "sg_message_id", "sg_event_id", "event"]
+  "required" : ["email", "sg_message_id", "sg_event_id", "event"]
 }

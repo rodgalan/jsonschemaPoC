@@ -1,5 +1,5 @@
 
-package lab.model.generated.hierarchy;
+package lab.model.generated.composite;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -3,9 +3,6 @@
   "id" : "urn:jsonschema:lab:model:composite:SendgridEvent",
   "title": "SendgridEvent",
   "properties" : {
-    "base_event": {
-      "$ref": "file:/Users/anna.rodriguez/Fotocasa/jsonschemaPoC/src/main/resources/composite/WebhookEventBase.jsonschema.json"
-    },
     "click_event": {
       "$ref": "file:/Users/anna.rodriguez/Fotocasa/jsonschemaPoC/src/main/resources/composite/ClickEvent.jsonschema.json"
     },
